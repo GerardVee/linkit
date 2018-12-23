@@ -37,8 +37,13 @@ export default class extends Component
         return (
             <div>
                 <Head>
+                    <meta charset='utf-8' />
                     <title>LinkIt - New Post</title>
                     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+                    <meta name='description' content='LinkIt by GerardVee' />
+                    <meta property='og:title' content='LinkIt - New Post' />
+                    <meta property='og:description' content='Linkit by GerardVee' />
+                    <meta property='og:image' content='https://s3.amazonaws.com/gerardvee/site/1528500158997.png' />
                     <link rel='icon' href='https://s3.amazonaws.com/gerardvee/site/1528500158997.png' />
                 </Head>
                 <Header loggedIn={ loggedIn } />
