@@ -42,6 +42,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(class extends Compon
         {
             this.props.getPosts('HOT', user.accessToken);
         }
+        else
+        {
+            this.props.getPosts('HOT', null);
+        }
     }
 
     clearError()
