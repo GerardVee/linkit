@@ -41,7 +41,7 @@ export default connect(mapStateToProps)(class extends Component
                 return (
                     <>
                         <div className='row'>
-                            <img className='linkit-profile-photo' src={ user ? user.picture.data.url : noProfile } />
+                            <img className='linkit-profile-photo' src={ noProfile } />
                         </div>
                         <FacebookAuthenticate />
                     </>
