@@ -21,17 +21,32 @@ export default connect(mapStateToProps)(class extends Component
                 </div>
             );
         }
-        return (
-            <>
-                <div className='row'>
-                    <img className='linkit-profile-photo' src={ user ? user.picture.data.url : noProfile } />
-                </div>
-                { !user && <FacebookAuthenticate /> }
-                { user && (
-                    <Option icon='person_outline'>
-                        <p>{ `Welcome, ${ user.name.split(' ')[0] }` }</p>
-                    </Option> )}
-            </>
-        );
+        else
+        {
+            if (user)
+            {
+                return (
+                    <>
+                        <div className='row'>
+                            <img className='linkit-profile-photo' src={ user.picture.data.url } />
+                        </div>
+                        <Option icon='person_outline'>
+                            <p>{ `Welcome, ${ user.name.split(' ')[0] }` }</p>
+                        </Option>
+                    </>
+                );
+            }
+            else
+            {
+                return (
+                    <>
+                        <div className='row'>
+                            <img className='linkit-profile-photo' src={ user ? user.picture.data.url : noProfile } />
+                        </div>
+                        <FacebookAuthenticate />
+                    </>
+                );
+            }
+        }
     }
 });
